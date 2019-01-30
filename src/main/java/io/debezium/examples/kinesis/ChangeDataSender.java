@@ -60,10 +60,10 @@ public class ChangeDataSender implements Runnable {
 
         final String regionName = config.getString(KINESIS_REGION_CONF_NAME);
 
-        final AWSCredentialsProvider credentialsProvider = new ProfileCredentialsProvider("default");
+        // final AWSCredentialsProvider credentialsProvider = new ProfileCredentialsProvider("default");
 
         kinesisClient = AmazonKinesisClientBuilder.standard()
-                .withCredentials(credentialsProvider)
+                // .withCredentials(credentialsProvider)
                 .withRegion(regionName)
                 .build();
     }
@@ -117,13 +117,13 @@ public class ChangeDataSender implements Runnable {
         String partitionKey = String.valueOf(record.key() != null ? record.key().hashCode() : -1);
         final byte[] payload = valueConverter.fromConnectData("dummy", schema, message);
 
-        PutRecordRequest putRecord = new PutRecordRequest();
+        // PutRecordRequest putRecord = new PutRecordRequest();
 
-        putRecord.setStreamName(streamNameMapper(record.topic()));
-        putRecord.setPartitionKey(partitionKey);
-        putRecord.setData(ByteBuffer.wrap(payload));
+        // putRecord.setStreamName(streamNameMapper(record.topic()));
+        // putRecord.setPartitionKey(partitionKey);
+        // putRecord.setData(ByteBuffer.wrap(payload));
 
-        kinesisClient.putRecord(putRecord);
+        // kinesisClient.putRecord(putRecord);
     }
 
     private String streamNameMapper(String topic) {

@@ -60,10 +60,10 @@ public class ChangeDataSender implements Runnable {
 
         final String regionName = config.getString(KINESIS_REGION_CONF_NAME);
 
-        final AWSCredentialsProvider credentialsProvider = new ProfileCredentialsProvider("default");
+        // final AWSCredentialsProvider credentialsProvider = new ProfileCredentialsProvider("default");
 
         kinesisClient = AmazonKinesisClientBuilder.standard()
-                .withCredentials(credentialsProvider)
+                // .withCredentials(credentialsProvider)
                 .withRegion(regionName)
                 .build();
     }

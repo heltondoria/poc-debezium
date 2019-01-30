@@ -62,7 +62,8 @@ public class ChangeDataSender implements Runnable {
 
         InstanceProfileCredentialsProvider test = InstanceProfileCredentialsProvider.getInstance();
 
-        System.out.println(test.getCredentials());
+        System.out.println("access_key");
+        System.out.println(test.getCredentials().getAWSAccessKeyId());
 
         // final AWSCredentialsProvider credentialsProvider = new ProfileCredentialsProvider("default");
 

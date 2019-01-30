@@ -42,6 +42,10 @@ public class ChangeDataSender implements Runnable {
    // private final AmazonKinesis kinesisClient;
 
     public ChangeDataSender() {
+
+        System.out.println("ENTROUUUUU@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+
+
         config = Configuration.empty().withSystemProperties(Function.identity()).edit()
                 .with(EmbeddedEngine.CONNECTOR_CLASS, "io.debezium.connector.mysql.MySqlConnector")
                 .with(EmbeddedEngine.ENGINE_NAME, APP_NAME)
@@ -64,6 +68,21 @@ public class ChangeDataSender implements Runnable {
         InstanceProfileCredentialsProvider test = InstanceProfileCredentialsProvider.getInstance();
 
         System.out.println("access_key");
+        System.out.println("access_key");
+        System.out.println("access_key");
+        System.out.println("access_key");
+        System.out.println("access_key");
+        System.out.println("access_key");
+        System.out.println("access_key");
+        System.out.println("access_key");
+        System.out.println("access_key");
+        System.out.println("access_key");
+        System.out.println("access_key");
+        System.out.println("access_key");
+        System.out.println("access_key");
+        System.out.println("access_key");
+        System.out.println("access_key");
+        
         System.out.println(test.getCredentials().getAWSAccessKeyId());
 
         // final AWSCredentialsProvider credentialsProvider = new ProfileCredentialsProvider("default");

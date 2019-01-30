@@ -10,7 +10,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <database.hostname>localhost</database.hostname>
+        <database.hostname>3.82.131.94</database.hostname>
         <database.port>3306</database.port>
         <database.user>debezium</database.user>
         <database.password>dbz</database.password>

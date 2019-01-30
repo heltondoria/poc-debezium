@@ -38,7 +38,7 @@ public class ChangeDataSender implements Runnable {
 
     private final Configuration config;
     private final JsonConverter valueConverter;
-    private final AmazonKinesis kinesisClient;
+   // private final AmazonKinesis kinesisClient;
 
     public ChangeDataSender() {
         config = Configuration.empty().withSystemProperties(Function.identity()).edit()
@@ -60,12 +60,16 @@ public class ChangeDataSender implements Runnable {
 
         final String regionName = config.getString(KINESIS_REGION_CONF_NAME);
 
+        InstanceProfileCredentialsProvider test = InstanceProfileCredentialsProvider.getInstance();
+
+        System.out.println(test.getCredentials());
+
         // final AWSCredentialsProvider credentialsProvider = new ProfileCredentialsProvider("default");
 
-        kinesisClient = AmazonKinesisClientBuilder.standard()
-                // .withCredentials(credentialsProvider)
-                .withRegion(regionName)
-                .build();
+        // kinesisClient = AmazonKinesisClientBuilder.standard()
+        //         .withCredentials(credentialsProvider)
+        //         .withRegion(regionName)
+        //         .build();
     }
 
     @Override
